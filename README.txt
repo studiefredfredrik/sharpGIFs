@@ -8,3 +8,6 @@ stitch the images togheter to an animated gif.
 sharpGif's is written in C#. The user can set the size of the finished 
 gif (the program keeps apect ratio) and the animation speed/frame delay.
 
+Blogpost showing one of my looping gifs:
+http://newfreshpeace.blogspot.no/2013/12/update-on-gif-creator-sharpgifs-20.html
+
