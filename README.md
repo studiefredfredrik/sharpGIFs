@@ -10,7 +10,7 @@ sharpGif's is written in C#. The user can set the size of the finished
 gif (the program keeps apect ratio) and the animation speed/frame delay.
 
 ## Screenshot and example gif
-![screenshot]()
-![example gif]()
+![screenshot](https://github.com/studiefredfredrik/sharpGIFs/blob/master/screenshots/Capture.JPG?raw=true)
+![example gif](https://github.com/studiefredfredrik/sharpGIFs/blob/master/screenshots/theGIF.gif?raw=true)
 
 
