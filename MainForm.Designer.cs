@@ -1,6 +1,6 @@
 ﻿namespace sharpGIFs_2._0
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -272,7 +272,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "sharpGIFs 3.0";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxImgPreview)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

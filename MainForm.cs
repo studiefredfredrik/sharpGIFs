@@ -1,22 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using System.Collections;
-using System.Collections.Specialized;
-using System.Web;
-using System.Diagnostics;
-using System.Threading;
 
 namespace sharpGIFs_2._0
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         //Setting global variables
         int newWidth = 400;
@@ -27,7 +18,7 @@ namespace sharpGIFs_2._0
         int currentImage = 0;
         string theGIFpath;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
@@ -62,7 +53,7 @@ namespace sharpGIFs_2._0
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             theGIFpath = Application.StartupPath + "/theGIF.gif";
             btnPreviewNxt.Enabled = false;
@@ -139,6 +130,7 @@ namespace sharpGIFs_2._0
                     memoryStream.SetLength(0);
                 }
                 binaryWriter.Close();
+                memoryStream.Close();
 
             }
             catch (Exception ex)
@@ -217,6 +209,7 @@ namespace sharpGIFs_2._0
                 }
                 binaryWriter.Close();
                 Image streamGIF = Image.FromStream(stream);
+                stream.Close();
                 return streamGIF;
             }
             catch (Exception ex)
@@ -267,6 +260,7 @@ namespace sharpGIFs_2._0
             }
             lblImageNumber.Text = (currentImage + 1) + " / " + thumbsList.Count;
         }
+
         private void btnDeleteImage_Click(object sender, EventArgs e)
         {
             if (thumbsList.Count > 0)
@@ -292,7 +286,9 @@ namespace sharpGIFs_2._0
             if (currentImage < 1) btnPreviewPrv.Enabled = false;
         }
         private void btnCreateGIF_Click(object sender, EventArgs e)
-        {   
+        {
+            if (thumbsList.Count == 0) return; 
+
             // It works, but having threading and async reading wouldn't hurt
             try
             {
@@ -302,7 +298,7 @@ namespace sharpGIFs_2._0
                 transparencyIndex = Convert.ToByte(txtTransparencyIndex.Text);
                 if (File.Exists(theGIFpath)) File.Delete(theGIFpath);
                 CreateGIF_File(thumbsList, theGIFpath);
-                Form2 n = new Form2();
+                PreviewForm n = new PreviewForm();
                 n.ShowDialog();
             }
             catch (Exception ex)
@@ -310,7 +306,6 @@ namespace sharpGIFs_2._0
                 MessageBox.Show(ex.Message);
             }
         }
-
 
     }
 }
