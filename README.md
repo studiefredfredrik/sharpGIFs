@@ -1,3 +1,4 @@
+# About
 sharpGIFs creates animated gif's from a collection of still images.
 
 The project started as a result of getting a GoPro camera that had the 
@@ -8,6 +9,8 @@ stitch the images togheter to an animated gif.
 sharpGif's is written in C#. The user can set the size of the finished 
 gif (the program keeps apect ratio) and the animation speed/frame delay.
 
-Blogpost showing one of my looping gifs:
-http://newfreshpeace.blogspot.no/2013/12/update-on-gif-creator-sharpgifs-20.html
+## Screenshot and example gif
+![screenshot]()
+![example gif]()
+
 
